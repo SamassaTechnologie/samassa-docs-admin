@@ -14,9 +14,22 @@
   <main>
     <h2>Créer un document administratif</h2>
     <form id="docForm">
+      <select id="type">
+        <option value="">-- Choisir un type de document --</option>
+        <option value="lettre">Lettre Administrative</option>
+        <option value="attestation">Attestation de Vente</option>
+        <option value="contrat">Contrat (bail, travail)</option>
+        <option value="motivation">Lettre de Motivation</option>
+        <option value="cv">Curriculum Vitae (CV)</option>
+        <option value="emploi">Demande d'Emploi</option>
+        <option value="compte">Ouverture/Fermeture de Compte Bancaire</option>
+        <option value="rapport">Rapport / Compte Rendu</option>
+        <option value="courrier">Courrier Officiel / Manuscrit</option>
+        <option value="secretariat">Documents de Secrétariat</option>
+      </select>
       <input type="text" id="nom" placeholder="Nom" required />
       <input type="text" id="prenom" placeholder="Prénom" required />
-      <textarea id="objet" placeholder="Objet de la demande" required></textarea>
+      <textarea id="infos" placeholder="Informations supplémentaires..." required></textarea>
       <button type="submit">Générer</button>
     </form>
     <div id="resultat"></div>

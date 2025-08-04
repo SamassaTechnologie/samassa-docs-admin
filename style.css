@@ -25,10 +25,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
 }
-input, textarea {
+input, textarea, select {
   padding: 0.8em;
   border: 1px solid #ccc;
   border-radius: 5px;
