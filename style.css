@@ -1,0 +1,78 @@
+:root {
+  --primary: #116da8;
+  --accent: #e8f0fe;
+  --font: 'Segoe UI', 'Arial', sans-serif;
+}
+body {
+  font-family: var(--font);
+  background: var(--accent);
+  margin: 0;
+  color: #2a2a2a;
+}
+header {
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  padding: 1.5em 0 1em 0;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  margin-bottom: 0.5em;
+  background: #fff;
+  object-fit: contain;
+}
+.slogan { font-weight: bold; font-size: 1.1em; margin-bottom: 0.2em; }
+.infos { font-size: 0.95em; margin-bottom: 0.5em; }
+main { max-width: 480px; margin: 2em auto; background: #fff; border-radius: 8px; box-shadow: 0 0 16px #116da820; padding: 1.5em; }
+#intro { text-align: center; margin-bottom: 1.2em; }
+#dashboard h3 { margin-bottom: 0.7em; }
+.doc-menu { display: flex; flex-wrap: wrap; gap: 0.7em; justify-content: center; margin-bottom: 1.5em; }
+.doc-menu button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  border-radius: 6px;
+  padding: 0.7em 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.doc-menu button:hover { background: #14507c; }
+form { display: flex; flex-direction: column; gap: 1em; }
+form label { font-weight: 500; margin-bottom: 0.2em; }
+form input, form textarea, form select {
+  padding: 0.6em;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 1em;
+}
+form textarea { min-height: 70px; resize: vertical; }
+#doc-result { background: #fcfcfc; padding: 1.2em; border-radius: 7px; margin-bottom: 1.2em; font-size: 1.05em; }
+#download-pdf, #back-menu {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7em 1em;
+  margin-right: 0.7em;
+  margin-bottom: 0.3em;
+  font-size: 1em;
+  cursor: pointer;
+}
+#download-pdf:hover, #back-menu:hover { background: #14507c; }
+footer {
+  text-align: center;
+  font-size: 0.95em;
+  color: #fff;
+  background: var(--primary);
+  padding: 0.7em 0;
+  margin-top: 2em;
+  border-radius: 0 0 7px 7px;
+}
+@media (max-width: 600px) {
+  main { padding: 0.7em; }
+  .doc-menu { gap: 0.5em; }
+  .logo { width: 60px; height: 60px; }
+}
