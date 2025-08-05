@@ -1,5 +1,4 @@
-// Service Worker: cache site for offline usage (PWA)
-const CACHE_NAME = 'samassa-cache-v1';
+const CACHE_NAME = 'samassa-cache-v2';
 const assets = [
   '/',
   '/index.html',
@@ -8,13 +7,11 @@ const assets = [
   '/logo.png',
   '/manifest.json'
 ];
-
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(assets))
   );
 });
-
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(
