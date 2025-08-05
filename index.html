@@ -18,36 +18,70 @@
       Grand Marché de Kayes, près du 1er arrondissement de la police<br>
       77291931 / <a href="mailto:boussesamassa10@gmail.com">boussesamassa10@gmail.com</a>
     </p>
+    <button id="toggle-theme" title="Mode sombre/clair">🌓</button>
   </header>
 
   <main>
     <section id="intro">
       <h2>Générateur de Documents Professionnels</h2>
-      <p>Remplissez le formulaire, générez et imprimez immédiatement vos documents administratifs, CV, lettres, attestations, etc. Service rapide & professionnel au Mali, accessible sur mobile et ordinateur.</p>
+      <p>Remplissez le formulaire, vérifiez le résumé, puis imprimez ou téléchargez : service rapide & professionnel au Mali, accessible sur mobile et ordinateur.</p>
+      <div id="pwa-prompt" style="display:none;">
+        <span>💡 Astuce : Installez ce site comme application (PWA) pour accès rapide !</span>
+        <button id="close-pwa-prompt">OK</button>
+      </div>
     </section>
 
     <nav id="dashboard">
-      <h3>📄 Choisissez le type de document à générer :</h3>
-      <div class="doc-menu">
-        <button data-template="lettre">Lettre administrative</button>
-        <button data-template="cv">Curriculum Vitae</button>
-        <button data-template="motivation">Lettre de motivation</button>
-        <button data-template="contrat">Contrat simple</button>
-        <button data-template="rapport">Rapport / Compte rendu</button>
-        <button data-template="attestation">Attestation de vente</button>
-        <button data-template="emploi">Demande d’emploi</button>
-        <button data-template="banque">Demande ouverture/fermeture de compte</button>
+      <h3>📄 Choisissez un type de document :</h3>
+      <input id="search-model" type="search" placeholder="Rechercher un modèle..." autocomplete="off" aria-label="Rechercher un modèle">
+      <div class="doc-menu" id="doc-menu"></div>
+      <button id="open-admin" title="Administration des modèles">⚙️ Gestion des modèles</button>
+      <div id="history-bar">
+        <span>🕑 Historique : </span>
+        <span id="history-list"></span>
+        <button id="clear-history" title="Effacer l'historique">Effacer</button>
       </div>
     </nav>
 
     <section id="form-section" style="display:none;">
-      <form id="doc-form"></form>
+      <form id="doc-form" autocomplete="off"></form>
+    </section>
+
+    <section id="resume-section" style="display:none;">
+      <h3>Vérifiez votre document</h3>
+      <div id="resume-content"></div>
+      <button id="confirm-generate">Valider et générer</button>
+      <button id="edit-form">Corriger</button>
+      <button id="back-menu2">Retour au menu</button>
     </section>
 
     <section id="result-section" style="display:none;">
       <div id="doc-result"></div>
-      <button id="download-pdf">Télécharger en PDF</button>
-      <button id="back-menu">Retour au menu</button>
+      <div class="pdf-bar">
+        <label>Taille papier : 
+          <select id="paper-size">
+            <option value="A4">A4</option>
+            <option value="A5">A5</option>
+          </select>
+        </label>
+        <button id="download-pdf">Télécharger en PDF</button>
+        <button id="print-doc">Imprimer</button>
+        <button id="clear-data">Effacer les données</button>
+        <button id="back-menu">Retour menu</button>
+      </div>
+    </section>
+
+    <section id="admin-section" style="display:none;">
+      <h3>Administration des modèles</h3>
+      <form id="admin-login" autocomplete="off">
+        <input type="password" id="admin-pass" placeholder="Mot de passe" required>
+        <button type="submit">Connexion</button>
+      </form>
+      <div id="admin-panel" style="display:none;">
+        <ul id="model-list"></ul>
+        <button id="add-model">Ajouter un modèle</button>
+        <button id="close-admin">Fermer</button>
+      </div>
     </section>
   </main>
 
